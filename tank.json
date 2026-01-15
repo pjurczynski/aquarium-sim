@@ -1,0 +1,75 @@
+{
+  "fish": [
+    {
+      "id": "0eaf0938-1c95-4109-bc49-8cb9efa7d053",
+      "species": "Goldfish",
+      "position": [
+        24,
+        5
+      ],
+      "direction": "Right",
+      "hunger": 0,
+      "health": 100,
+      "age": 242,
+      "breeding_cooldown": 330
+    },
+    {
+      "id": "c02ff1df-cb42-4ffe-9fe4-90d73b168b08",
+      "species": "Guppy",
+      "position": [
+        44,
+        10
+      ],
+      "direction": "Right",
+      "hunger": 0,
+      "health": 100,
+      "age": 242,
+      "breeding_cooldown": 0
+    },
+    {
+      "id": "1055eb7e-b30e-4862-a8e4-3ef9be17ae88",
+      "species": "Betta",
+      "position": [
+        64,
+        8
+      ],
+      "direction": "Right",
+      "hunger": 0,
+      "health": 100,
+      "age": 242,
+      "breeding_cooldown": 0
+    },
+    {
+      "id": "a96e0b99-548f-4f38-92e2-71b10cfc6f16",
+      "species": "Goldfish",
+      "position": [
+        37,
+        7
+      ],
+      "direction": "Left",
+      "hunger": 0,
+      "health": 100,
+      "age": 171,
+      "breeding_cooldown": 330
+    },
+    {
+      "id": "900fc8f5-31bd-4eca-8aa7-0114fe3fe705",
+      "species": "Goldfish",
+      "position": [
+        29,
+        7
+      ],
+      "direction": "Right",
+      "hunger": 0,
+      "health": 100,
+      "age": 170,
+      "breeding_cooldown": 0
+    }
+  ],
+  "simulation_speed": 1.0,
+  "tick_count": 242,
+  "dimensions": [
+    121,
+    49
+  ]
+}

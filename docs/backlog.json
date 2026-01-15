@@ -1,0 +1,587 @@
+{
+  "questions": [
+    {
+      "id": "Q1",
+      "category": "Core Vision",
+      "question": "What differentiates this from existing solutions (asciiquarium, freefish)?",
+      "status": "answered",
+      "answer": "Full simulation mechanics - fish need care, can get sick, breed, and die. Not just a screensaver."
+    },
+    {
+      "id": "Q2",
+      "category": "Core Vision",
+      "question": "Is this purely visual/meditative, or does it have simulation/gameplay elements?",
+      "status": "answered",
+      "answer": "Full simulation with gameplay elements - actual virtual pet mechanics"
+    },
+    {
+      "id": "Q3",
+      "category": "Visual Style",
+      "question": "ASCII art, Unicode characters, or a mix? What level of detail?",
+      "status": "answered",
+      "answer": "Simple ASCII only - `><>` style, 1-3 characters per fish"
+    },
+    {
+      "id": "Q4",
+      "category": "Visual Style",
+      "question": "Color support expectations? (16 colors, 256, true color, or monochrome)",
+      "status": "answered",
+      "answer": "Basic 16 terminal colors for wide compatibility"
+    },
+    {
+      "id": "Q5",
+      "category": "Entities",
+      "question": "What lives in the aquarium? (fish species, plants, snails, shrimp, decorations?)",
+      "status": "answered",
+      "answer": "Fish only for Tier 1. Multiple species with mechanical variety."
+    },
+    {
+      "id": "Q6",
+      "category": "Entities",
+      "question": "Do entities have behaviors/AI? (schooling, hiding, feeding patterns)",
+      "status": "answered",
+      "answer": "Simple movement only - no complex behaviors in Tier 1"
+    },
+    {
+      "id": "Q7",
+      "category": "Simulation",
+      "question": "Is there a care/maintenance aspect? (feeding, cleaning, water quality)",
+      "status": "answered",
+      "answer": "Feeding only for Tier 1. No water quality or cleaning mechanics."
+    },
+    {
+      "id": "Q8",
+      "category": "Simulation",
+      "question": "Persistence - does the aquarium state save between sessions?",
+      "status": "answered",
+      "answer": "Yes - state saves. Time pauses when app closes, resumes when reopened."
+    },
+    {
+      "id": "Q9",
+      "category": "Interactivity",
+      "question": "What user interactions are supported? (view only, feed, tap glass, add fish?)",
+      "status": "answered",
+      "answer": "Feed (global), add fish (sandbox), remove fish, view stats, adjust speed"
+    },
+    {
+      "id": "Q10",
+      "category": "Technical",
+      "question": "Target platform(s)? (macOS, Linux, Windows, cross-platform?)",
+      "status": "answered",
+      "answer": "macOS primary, Linux secondary, Windows nice-to-have"
+    },
+    {
+      "id": "Q11",
+      "category": "Technical",
+      "question": "Preferred implementation language?",
+      "status": "answered",
+      "answer": "Rust with ratatui"
+    },
+    {
+      "id": "Q12",
+      "category": "Technical",
+      "question": "Minimum terminal size requirements?",
+      "status": "answered",
+      "answer": "80x24 minimum"
+    },
+    {
+      "id": "Q13",
+      "category": "Simulation - Time",
+      "question": "Time model: Real-time (1 min = 1 min), accelerated (1 min = 1 hour), or configurable?",
+      "status": "answered",
+      "answer": "Configurable - user can choose simulation speed"
+    },
+    {
+      "id": "Q14",
+      "category": "Simulation - Time",
+      "question": "Does the simulation run when the terminal is closed? (background daemon vs pause)",
+      "status": "answered",
+      "answer": "Pause - time stops when app closes, resumes when reopened"
+    },
+    {
+      "id": "Q15",
+      "category": "Simulation - Fish Stats",
+      "question": "What parameters should each fish track? (hunger, health, stress, age, happiness?)",
+      "status": "answered",
+      "answer": "Tier 1 (Light): Just Hunger + Health per fish. Keep it simple to start."
+    },
+    {
+      "id": "Q16",
+      "category": "Simulation - Ecosystem",
+      "question": "Should the tank have ecosystem mechanics? (water quality, ammonia, pH, temperature?)",
+      "status": "answered",
+      "answer": "No - excluded from Tier 1. May add in future expansion."
+    },
+    {
+      "id": "Q17",
+      "category": "Simulation - Lifecycle",
+      "question": "Full lifecycle: Do fish breed, grow from fry, age, and die of old age?",
+      "status": "answered",
+      "answer": "Super simple: breeding produces instant adults, no growth stages, natural death at lifespan end"
+    },
+    {
+      "id": "Q18",
+      "category": "Simulation - Illness",
+      "question": "Disease mechanics: Can fish get sick? How is it treated? Is it contagious?",
+      "status": "answered",
+      "answer": "No illness mechanics in Tier 1. Death is starvation-only."
+    },
+    {
+      "id": "Q19",
+      "category": "Progression",
+      "question": "Economy: Is there currency? Do you buy fish/equipment? Earn from breeding?",
+      "status": "answered",
+      "answer": "No economy - pure sandbox mode. Spawn any species freely."
+    },
+    {
+      "id": "Q20",
+      "category": "Progression",
+      "question": "Goals: Sandbox mode, achievements, or structured progression?",
+      "status": "answered",
+      "answer": "Pure sandbox - no achievements, no goals, just simulation"
+    },
+    {
+      "id": "Q21",
+      "category": "Simulation - Fish Behavior",
+      "question": "Individual personalities: Do fish have unique traits (shy, aggressive, greedy)?",
+      "status": "answered",
+      "answer": "No individual personalities in Tier 1 - species-level differences only"
+    },
+    {
+      "id": "Q22",
+      "category": "Simulation - Fish Behavior",
+      "question": "Species differences: Different care needs, lifespans, breeding patterns per species?",
+      "status": "answered",
+      "answer": "Yes - mechanical variety. Each species has unique hunger rate, health, lifespan."
+    },
+    {
+      "id": "Q23",
+      "category": "Fish Variety - Tier 1",
+      "question": "Species mechanical differences: Should species differ in hunger rates, lifespans, base health, or just visual appearance?",
+      "status": "answered",
+      "answer": "Mechanical variety - each species has unique hunger rate, health stats, and lifespan"
+    },
+    {
+      "id": "Q24",
+      "category": "Fish Variety - Tier 1",
+      "question": "ASCII art complexity: Simple single-char fish (><>) or multi-character sprites with detail?",
+      "status": "answered",
+      "answer": "Simple ASCII - 1-3 characters per fish (`><>`, `<><`, `><>>`)"
+    },
+    {
+      "id": "Q25",
+      "category": "Breeding - Tier 1",
+      "question": "Breeding trigger: Automatic when conditions met (health + food), or player-initiated?",
+      "status": "answered",
+      "answer": "Automatic when conditions met - no player action required"
+    },
+    {
+      "id": "Q26",
+      "category": "Breeding - Tier 1",
+      "question": "Species compatibility: Same species only, or allow cross-breeding?",
+      "status": "answered",
+      "answer": "Same species only - keeps it simple and realistic"
+    },
+    {
+      "id": "Q27",
+      "category": "Breeding - Tier 1",
+      "question": "Baby fish: Instant adult, or visual fry stage that grows over time?",
+      "status": "answered",
+      "answer": "Instant adults - no growth stages"
+    },
+    {
+      "id": "Q28",
+      "category": "Death/Illness - Tier 1",
+      "question": "Death triggers: Just starvation, or also random illness events?",
+      "status": "answered",
+      "answer": "Starvation only - hunger maxes out causes health to drain, death at 0 health"
+    },
+    {
+      "id": "Q29",
+      "category": "Death/Illness - Tier 1",
+      "question": "Illness treatment: Always fatal, or can player cure sick fish?",
+      "status": "answered",
+      "answer": "N/A - no illness mechanics in Tier 1"
+    },
+    {
+      "id": "Q30",
+      "category": "Death/Illness - Tier 1",
+      "question": "Visual indicators: How should sick/dying/dead fish look different?",
+      "status": "answered",
+      "answer": "No visual death stages - dead fish simply disappear. Hungry fish shown in yellow, critical in red."
+    },
+    {
+      "id": "Q31",
+      "category": "Player Actions",
+      "question": "Feeding: Global scatter (all fish) or targeted feeding (specific fish)?",
+      "status": "answered",
+      "answer": "Global scatter - press key, all hungry fish eat"
+    },
+    {
+      "id": "Q32",
+      "category": "Player Actions",
+      "question": "Adding fish: Currency/shop system, or sandbox 'spawn fish' command?",
+      "status": "answered",
+      "answer": "Pure sandbox - spawn any species freely, no currency"
+    },
+    {
+      "id": "Q33",
+      "category": "Player Actions",
+      "question": "Other actions: Anything beyond feed + add fish? (remove fish, rename, select?)",
+      "status": "answered",
+      "answer": "Remove fish, select to view stats, adjust simulation speed"
+    },
+    {
+      "id": "Q34",
+      "category": "UI/Interaction",
+      "question": "Input model: Real-time keyboard commands, menu-based, or command-line style?",
+      "status": "answered",
+      "answer": "Real-time keyboard commands (ratatui event handling)"
+    },
+    {
+      "id": "Q35",
+      "category": "UI/Interaction",
+      "question": "Info display: What stats/info shown on screen? (individual fish, tank overview, both?)",
+      "status": "answered",
+      "answer": "Both - tank overview in header, selected fish stats in footer"
+    },
+    {
+      "id": "Q36",
+      "category": "UI/Interaction",
+      "question": "Fish selection: Can player select/highlight individual fish to see their stats?",
+      "status": "answered",
+      "answer": "Yes - tab or arrow keys to cycle through fish, show stats in footer"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "M1",
+      "milestone": "Project Setup",
+      "status": "completed",
+      "tasks": [
+        {
+          "id": "M1-T1",
+          "title": "Initialize Rust project with Cargo",
+          "status": "completed",
+          "description": "cargo new aquarium-sim, set up basic project structure"
+        },
+        {
+          "id": "M1-T2",
+          "title": "Add dependencies",
+          "status": "completed",
+          "description": "ratatui, crossterm, serde (for save/load), uuid"
+        },
+        {
+          "id": "M1-T3",
+          "title": "Create basic ratatui app scaffold",
+          "status": "completed",
+          "description": "Main loop, event handling, clean exit"
+        }
+      ]
+    },
+    {
+      "id": "M2",
+      "milestone": "Core Data Model",
+      "status": "completed",
+      "tasks": [
+        {
+          "id": "M2-T1",
+          "title": "Define Species struct",
+          "status": "completed",
+          "description": "name, sprites (left/right), hunger_rate, base_health, lifespan, breeding_cooldown"
+        },
+        {
+          "id": "M2-T2",
+          "title": "Define Fish struct",
+          "status": "completed",
+          "description": "id, species, position, direction, hunger, health, age, breeding_cooldown"
+        },
+        {
+          "id": "M2-T3",
+          "title": "Define Tank struct",
+          "status": "completed",
+          "description": "fish collection, simulation_speed, tick_count, dimensions"
+        },
+        {
+          "id": "M2-T4",
+          "title": "Create initial species roster",
+          "status": "completed",
+          "description": "3-5 starter species with different stats (goldfish, guppy, betta, etc.)"
+        }
+      ]
+    },
+    {
+      "id": "M3",
+      "milestone": "Basic Rendering",
+      "status": "completed",
+      "tasks": [
+        {
+          "id": "M3-T1",
+          "title": "Render tank boundaries",
+          "status": "completed",
+          "description": "Draw box around aquarium area"
+        },
+        {
+          "id": "M3-T2",
+          "title": "Render fish at positions",
+          "status": "completed",
+          "description": "Draw ASCII sprite based on direction"
+        },
+        {
+          "id": "M3-T3",
+          "title": "Render header bar",
+          "status": "completed",
+          "description": "Title, speed indicator, fish count"
+        },
+        {
+          "id": "M3-T4",
+          "title": "Render footer/status bar",
+          "status": "completed",
+          "description": "Selected fish stats, keybind hints"
+        },
+        {
+          "id": "M3-T5",
+          "title": "Color fish by state",
+          "status": "completed",
+          "description": "Normal=white/cyan, hungry=yellow, critical=red"
+        }
+      ]
+    },
+    {
+      "id": "M4",
+      "milestone": "Fish Movement",
+      "status": "completed",
+      "tasks": [
+        {
+          "id": "M4-T1",
+          "title": "Implement basic horizontal movement",
+          "status": "completed",
+          "description": "Fish swim left/right, bounce off walls"
+        },
+        {
+          "id": "M4-T2",
+          "title": "Add vertical drift",
+          "status": "completed",
+          "description": "Slight random vertical movement for natural feel"
+        },
+        {
+          "id": "M4-T3",
+          "title": "Prevent fish overlap",
+          "status": "skipped",
+          "description": "Basic collision avoidance (optional for Tier 1, skipped)"
+        }
+      ]
+    },
+    {
+      "id": "M5",
+      "milestone": "Simulation Loop",
+      "status": "completed",
+      "tasks": [
+        {
+          "id": "M5-T1",
+          "title": "Implement tick system",
+          "status": "completed",
+          "description": "Regular simulation updates based on configurable speed"
+        },
+        {
+          "id": "M5-T2",
+          "title": "Update hunger per tick",
+          "status": "completed",
+          "description": "Increase hunger based on species hunger_rate"
+        },
+        {
+          "id": "M5-T3",
+          "title": "Update health when starving",
+          "status": "completed",
+          "description": "Drain health when hunger = 100"
+        },
+        {
+          "id": "M5-T4",
+          "title": "Update fish age",
+          "status": "completed",
+          "description": "Increment age per tick"
+        },
+        {
+          "id": "M5-T5",
+          "title": "Handle death conditions",
+          "status": "completed",
+          "description": "Remove fish when health=0 or age>=lifespan"
+        }
+      ]
+    },
+    {
+      "id": "M6",
+      "milestone": "Player Input - Feeding",
+      "status": "completed",
+      "tasks": [
+        {
+          "id": "M6-T1",
+          "title": "Handle 'F' key for feeding",
+          "status": "completed",
+          "description": "Detect keypress, trigger feed action"
+        },
+        {
+          "id": "M6-T2",
+          "title": "Implement global feed logic",
+          "status": "completed",
+          "description": "Reduce hunger for all fish (to 0 or by fixed amount)"
+        },
+        {
+          "id": "M6-T3",
+          "title": "Optional: visual food particles",
+          "status": "skipped",
+          "description": "Brief animation of food falling (nice-to-have, deferred to M11)"
+        }
+      ]
+    },
+    {
+      "id": "M7",
+      "milestone": "Player Input - Fish Management",
+      "status": "completed",
+      "tasks": [
+        {
+          "id": "M7-T1",
+          "title": "Implement fish selection",
+          "status": "completed",
+          "description": "Tab/arrows to cycle through fish, highlight selected"
+        },
+        {
+          "id": "M7-T2",
+          "title": "Show selected fish stats",
+          "status": "completed",
+          "description": "Display name, hunger, health, age in footer"
+        },
+        {
+          "id": "M7-T3",
+          "title": "Handle 'A' key for add fish",
+          "status": "completed",
+          "description": "Open species picker, spawn new fish"
+        },
+        {
+          "id": "M7-T4",
+          "title": "Handle 'R' key for remove fish",
+          "status": "completed",
+          "description": "Remove currently selected fish"
+        }
+      ]
+    },
+    {
+      "id": "M8",
+      "milestone": "Player Input - Speed Control",
+      "status": "completed",
+      "tasks": [
+        {
+          "id": "M8-T1",
+          "title": "Handle +/- keys for speed",
+          "status": "completed",
+          "description": "Increase/decrease simulation speed"
+        },
+        {
+          "id": "M8-T2",
+          "title": "Define speed presets",
+          "status": "completed",
+          "description": "0.5x, 1x, 2x, 5x, 10x options"
+        },
+        {
+          "id": "M8-T3",
+          "title": "Display current speed in header",
+          "status": "completed",
+          "description": "Update header to show current speed multiplier"
+        }
+      ]
+    },
+    {
+      "id": "M9",
+      "milestone": "Breeding System",
+      "status": "completed",
+      "tasks": [
+        {
+          "id": "M9-T1",
+          "title": "Check breeding conditions per tick",
+          "status": "completed",
+          "description": "Find pairs of same species with health>50, hunger<50, no cooldown"
+        },
+        {
+          "id": "M9-T2",
+          "title": "Spawn baby fish",
+          "status": "completed",
+          "description": "Create new fish (instant adult) near parents"
+        },
+        {
+          "id": "M9-T3",
+          "title": "Apply breeding cooldown",
+          "status": "completed",
+          "description": "Set cooldown on both parents"
+        },
+        {
+          "id": "M9-T4",
+          "title": "Optional: tank capacity limit",
+          "status": "skipped",
+          "description": "Prevent breeding if tank is full (nice-to-have, deferred)"
+        }
+      ]
+    },
+    {
+      "id": "M10",
+      "milestone": "Persistence",
+      "status": "completed",
+      "tasks": [
+        {
+          "id": "M10-T1",
+          "title": "Implement save state to JSON",
+          "status": "completed",
+          "description": "Serialize Tank with all fish to file"
+        },
+        {
+          "id": "M10-T2",
+          "title": "Implement load state from JSON",
+          "status": "completed",
+          "description": "Deserialize Tank on startup if file exists"
+        },
+        {
+          "id": "M10-T3",
+          "title": "Auto-save on clean exit",
+          "status": "completed",
+          "description": "Save when user presses Q to quit"
+        },
+        {
+          "id": "M10-T4",
+          "title": "Handle missing/corrupt save file",
+          "status": "completed",
+          "description": "Start fresh tank if load fails"
+        }
+      ]
+    },
+    {
+      "id": "M11",
+      "milestone": "Polish & UX",
+      "status": "completed",
+      "tasks": [
+        {
+          "id": "M11-T1",
+          "title": "Handle terminal resize",
+          "status": "completed",
+          "description": "Adjust tank dimensions on resize"
+        },
+        {
+          "id": "M11-T2",
+          "title": "Add pause functionality",
+          "status": "completed",
+          "description": "Space to pause/resume simulation"
+        },
+        {
+          "id": "M11-T3",
+          "title": "Improve species picker UI",
+          "status": "completed",
+          "description": "Nice modal for selecting species when adding fish"
+        },
+        {
+          "id": "M11-T4",
+          "title": "Add help overlay",
+          "status": "completed",
+          "description": "? key to show keybinds"
+        }
+      ]
+    }
+  ]
+}
