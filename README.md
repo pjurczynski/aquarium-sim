@@ -65,6 +65,13 @@ cargo run
 
 ## Requirements
 
-- Rust 1.70+
-- Terminal with 16-color support
-- Minimum size: 80x24
+### System
+- **Rust toolchain** - Install via [rustup](https://rustup.rs/):
+  ```bash
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  ```
+- **macOS** or **Linux** (Windows: untested but may work)
+
+### Terminal
+- 16-color support (most modern terminals)
+- Minimum size: 80x24 characters
